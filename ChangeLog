@@ -1,0 +1,31 @@
+WarServ ChangeLog
+Fish (F), Mark (M), DeadNotBuried (D)
+=============================================================================
+3.0.a3
+ - Update Copyright (D)
+ - Automatically remove players from game if they leave the channel/Network (D)
+
+3.0.a2 - Mark (M)
+ - Update settings table to a2 compatible format. (M)
+
+3.0.a1 - Mark (M)
+ - Port to 3.0 API and Win32. (M)
+
+1.2 - DeadNotBuried
+ - fixed players being asked to play a war hand when they are not in the war
+ - fixed error in calculating correct winner of a war
+ - added Installation Instructions to Readme file
+ - fixed version number displayed in !rules
+ - added explanation of games to !rules
+ - configure.in updated version number
+ - updated license details in source files
+ - !stop now calls correct procedure
+ - channel setting now requires Oper user level to change channel
+
+1.1
+ - added code to enable !stop command
+
+1.0 - Fish 
+ - Initial Release. Code Contributed by DeadNotBurried (dnb@majestic-liaisons.com)
+ - Make game channel configurable.
+ - Standardize on hostname.

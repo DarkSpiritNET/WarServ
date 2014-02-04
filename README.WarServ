@@ -1,0 +1,101 @@
+
+WarServ Manual
+_________________________________________________________________
+
+   1. Prerequisites and Installation.
+
+        1.1. Compiling and Installation
+
+   2. Basic Configuration
+
+   3. Operational Commands
+
+   Welcome  to  the  WarServ Manual. This document will aid you in
+   setting up and running WarServ on your IRC network.
+
+   WarServ is a Game Service that plays the War Card Game.
+
+   Unlike the real Card Game, up to 10 players can play at once, and
+   any card may be played. Otherwise the game is the same.
+
+   Basic Game Description:
+   The Object is to hold all cards in the deck.
+   Each player plays a card in turn (without seeing what the card is
+   untill it has been played), the highest card wins the hand, and keeps
+   all the played cards.
+   When two or more players play the same card, (eg kings) War is
+   declared, and each player involved in the War must then play 3 cards
+   untill there is a winner, or a player doesn't have enough cards.
+
+1. Prerequisites and Installation.
+
+   WarServ is designed to run on Top of NeoStats 3.
+   Please  refer  to  the  NeoStats website  for more
+   information on the requirements for NeoStats.
+
+   WarServ requires the following:
+     * NeoStats 3.0 or Higher correctly installed and Running
+     * The time to read this entire document.
+
+
+1.1. Compiling and Installation
+
+   As  long  as  you  have  successfully setup NeoStats, and installed it
+   correctly,  Compiling  WarServ is very simple and straight forward. First
+   you  must  extract  the  files  from  the download package. This is as
+   simple as:
+bash$ tar -xzf WarServ-<ver>.tar.gz
+
+   This  should  then  create  a  directory  called  WarServ-<version> where
+   <version> is the Version of WarServ. Then Proceed to Change into the WarServ
+   directory, and run Configure as follows:
+bash$./configure [--with-neostats=<dir>]
+
+   --with-neostats=<dir> should be used if your neostats directory is not
+   in a standard location (~/NeoStats3.0/). Replace <dir> with the full path
+   to your NeoStats installation directory (NOT SOURCE DIRECTORY)
+
+   If  the  configuration did not produce a error, you may then move onto
+   Compiling  WarServ.  Compiling  is simply just issuing the "make" command
+   (or "gmake" if you are running BSD):
+
+   Again,  check  for  Error  messages.  As  long  as there are not error messages,
+   "make install" (or "gmake" if you are running BSD) will install WarServ, this
+   README file, and any auxiluary files needed into your NeoStats directory:
+
+   Once  Installation  is  complete, you can either configure NeoStats to
+   load WarServ when it starts, or load WarServ via IRC.
+
+   To  Configure  NeoStats  to automatically load WarServ when it boots, add
+   the  following  line  to  your  "neostats.conf"  file  in  the NeoStats
+   directory:
+
+   LOAD_MODULE WarServ
+
+   To  load  WarServ  via  IRC,  you must make sure you have the appropriate
+   permissions and issue the following command:
+
+   /msg neostats load WarServ
+
+   Thats  it.  WarServ  is  now  loaded  and ready for use (in fact, it will
+   already be running now, but read on for futher information.
+
+2. Basic Configuration
+
+   The Channel WarServ  plays in is configured online via IRC. When you
+   first start up WarServ,  it  defaults to playing in "#Games_War", to
+   change the channel use the following command:
+
+   /msg warserv set chan <#channel>
+
+   The new channel name will be saved for future reference, and WarServ
+   will message the current channel telling those there where it is moving
+   to, and will part the old channel and join the new one.
+
+   NOTE: if a game is in progress the set chan command will not work.
+
+3. Operational Commands
+
+   WarServ  has  a  number  of  commands  to play the game in channel.
+   To list the commands send the text "!help"  to the channel WarServ
+   is set to play in.
